@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/current_plan_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="5dp"
+    app:contentPadding="10dp"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true">
+
+        <TextView
+            android:id="@+id/row_active_plan_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/active"
+            android:textColor="@color/green"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/row_plan_type_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/row_active_plan_label"
+            android:textColor="@color/gunmetal"
+            android:textSize="20sp"
+            tools:text="ASTRO30" />
+
+        <TextView
+            android:id="@+id/row_plan_desc_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/row_plan_type_label"
+            android:layout_toLeftOf="@+id/show_more_less_button"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingBottom="3dp"
+            android:textColor="@color/dark_grey"
+            android:textSize="15sp"
+            tools:text="Description can be anything that is visible to user" />
+
+        <TextView
+            android:id="@+id/show_more_less_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/row_plan_desc_label"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/row_plan_type_label"
+            android:gravity="bottom"
+            android:padding="5dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="10sp"
+            tools:text="More" />
+
+        <TextView
+            android:id="@+id/row_plan_topic_count_validity_label"
+            fontPath="fonts/Rupee_Foradian.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/row_plan_desc_label"
+            android:layout_toLeftOf="@+id/row_plan_buy_button"
+            android:gravity="bottom"
+            android:textColor="@color/gunmetal"
+            android:textSize="13sp"
+            tools:text="Chat Topics : 3 | Validity : 7 Days" />
+
+        <TextView
+            android:id="@+id/row_plan_buy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/row_plan_topic_count_validity_label"
+            android:layout_marginTop="3dp"
+            android:background="@color/colorPrimary"
+            android:padding="5dp"
+            android:text="@string/buy_now"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

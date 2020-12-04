@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1032162079163",
+    "firebase_url": "https://astrobuddy-universal.firebaseio.com",
+    "project_id": "astrobuddy-universal",
+    "storage_bucket": "astrobuddy-universal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032162079163:android:e62776ed56aefe7131549e",
+        "android_client_info": {
+          "package_name": "in.appnow.astrobuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032162079163-376dvbo1dsjk2f0c9ijibeqkokbvsqie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASe3rH-eOnbczQtNb_ZsSGNlrTyQI11hY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032162079163-376dvbo1dsjk2f0c9ijibeqkokbvsqie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

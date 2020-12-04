@@ -1,0 +1,341 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion = '29.0.2'
+    //dataBinding.enabled = true
+    def fbAppId = project.findProperty("FACEBOOK_API_KEY")
+    def razorTestKeyId = project.findProperty("RAZOR_TEST_KEY_ID")
+    def razorKeyId = project.findProperty("RAZOR_KEY_ID")
+    def fbLoginProtocol = "fb" + fbAppId
+    def facebookAuthorityValue = "com.facebook.app.FacebookContentProvider" + fbAppId
+
+    defaultConfig {
+        applicationId "in.appnow.astrobuddy"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode generateVersionCode()
+        versionName generateVersionName()
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+
+        buildConfigField 'String', 'STAGING_END_POINT', (project.findProperty("STAGING_END_POINT") ?: "")
+        buildConfigField 'String', 'PRODUCTION_END_POINT', (project.findProperty("PRODUCTION_END_POINT") ?: "")
+
+        buildConfigField 'String', 'YOUTUBE_API_KEY1', (project.findProperty("YOUTUBE_API_KEY_1") ?: "")
+        buildConfigField 'String', 'YOUTUBE_API_KEY2', (project.findProperty("YOUTUBE_API_KEY_2") ?: "")
+        buildConfigField 'String', 'PLACES_API_KEY1', (project.findProperty("PLACES_API_KEY_1") ?: "")
+        buildConfigField 'String', 'PLACES_API_KEY2', (project.findProperty("PLACES_API_KEY_2") ?: "")
+
+
+        buildConfigField 'String', 'HOROSOPE_USER_ID', (project.findProperty("HOROSOPE_USER_ID") ?: "")
+        buildConfigField 'String', 'HOROSOCPE_API_KEY', (project.findProperty("HOROSOCPE_API_KEY") ?: "")
+        buildConfigField 'String', 'HOROSCOPE_CHART_END_POINT', (project.findProperty("HOROSCOPE_CHART_END_POINT") ?: "")
+        buildConfigField 'String', 'HOROSCOPE_JSON_END_POINT', (project.findProperty("HOROSCOPE_JSON_END_POINT") ?: "")
+        buildConfigField 'String', 'ASTRO_BLURT_STAGING_KEY', (project.findProperty("ASTRO_BLURT_STAGING_KEY") ?: "")
+        buildConfigField 'String', 'ASTRO_BLURT_PRODUCTION_KEY', (project.findProperty("ASTRO_BLURT_PRODUCTION_KEY") ?: "")
+
+        buildConfigField 'String', 'CONSUMER_KEY', (project.findProperty("CONSUMER_KEY") ?: "")
+        buildConfigField 'String', 'CONSUMER_SECRET', (project.findProperty("CONSUMER_SECRET") ?: "")
+
+        buildConfigField 'String', 'MERCHANT_ID', (project.findProperty("MERCHANT_ID") ?: "")
+        buildConfigField 'String', 'ACCESS_CODE', (project.findProperty("ACCESS_CODE") ?: "")
+        buildConfigField 'String', 'REDIRECT_URL', (project.findProperty("REDIRECT_URL") ?: "")
+
+        buildConfigField 'String', 'TRANS_URL', (project.findProperty("TRANS_URL") ?: "")
+
+        resValue "string", "facebook_login_protocol", "${fbLoginProtocol}"
+
+        def filesAuthorityValue = applicationId + ".file_provider"
+        resValue "string", "authority", "${filesAuthorityValue}"
+
+
+        // Adds a new field for the authority to the BuildConfig class.
+        buildConfigField "String", "FILES_AUTHORITY", "\"${filesAuthorityValue}\""
+
+        //to see the structure of Database
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
+            }
+        }
+        //for testing
+        sourceSets {
+            androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+        }
+
+    }
+    // Configure only for each module that uses Java 8
+    // language features (either in its source code or
+    // through dependencies).
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            manifestPlaceholders =
+                    [razorAPIKey: razorKeyId]
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+        debug {
+            manifestPlaceholders =
+                    [razorAPIKey: razorTestKeyId]
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            versionNameSuffix ".debug"
+            resValue "string", "app_version", "${defaultConfig.versionName}${versionNameSuffix}"
+            resValue "string", "app_version_code", "${defaultConfig.versionCode}${versionNameSuffix}"
+        }
+    }
+    // Specifies two flavor dimensions.
+    flavorDimensions "tier"
+    productFlavors{
+        // Alpha/Dev/Nightly/Preview
+        alpha {
+            dimension "tier"
+            versionNameSuffix ".alpha"
+            resValue "string", "app_version", "${defaultConfig.versionName}${versionNameSuffix}"
+            resValue "string", "app_version_code", "${defaultConfig.versionCode}${versionNameSuffix}"
+            // when building this flavor, any file under
+            // `src/alpha` will override `src/main`
+        }
+
+        // Beta/Demo/Staging
+        beta {
+            dimension "tier"
+            versionNameSuffix ".beta"
+            resValue "string", "app_version", "${defaultConfig.versionName}${versionNameSuffix}"
+            resValue "string", "app_version_code", "${defaultConfig.versionCode}${versionNameSuffix}"
+            // when building this flavor, any file under
+            // `src/beta` will override `src/main`
+        }
+
+        // Prod/Live/Version1
+        prod {
+            dimension "tier"
+            resValue "string", "app_version", "${defaultConfig.versionName}"
+            resValue "string", "app_version_code", "${defaultConfig.versionCode}"
+            // when building this flavor, any file under
+            // `src/prod` will override `src/main`
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        //OR if you prefer, you can continue to check for error in release builds,
+        //but continue the build even when errors are found.
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+
+    //custom tabs to open link in chrome tabs
+    //implementation "com.android.support:customtabs:$rootProject.supportLibraryVersion"
+
+    //Google Places
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+    implementation 'com.google.android.libraries.places:places:2.0.0'
+
+    //Social Login auth
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.facebook.android:facebook-login:4.35.0'
+    implementation 'com.twitter.sdk.android:twitter-core:3.2.0'
+    implementation 'com.twitter.sdk.android:tweet-ui:3.2.0'
+
+    //Glide dependency
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-messaging:19.0.1'
+    implementation 'com.google.firebase:firebase-core:17.0.1'
+    implementation 'com.google.firebase:firebase-config:18.0.0'
+    implementation 'com.google.firebase:firebase-database:18.0.0'
+
+    //Circle Image View
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+    //SDP dependency for different size of devices
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    // AstroApplication Wheel
+    implementation project(':WheelViewLib')
+
+    //Emoji Library
+    implementation 'com.vanniktech:emoji-google:0.5.1'
+
+    // ButterKnife Dependency Injection
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+
+    /* ==== Room Dependency with Lifecycle, ViewModel, Live Data ==== */
+
+    // ViewModel and LiveData
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+
+    // alternatively, just ViewModel
+    implementation 'android.arch.lifecycle:viewmodel:1.1.1'
+
+    // alternatively, just LiveData
+    implementation 'android.arch.lifecycle:livedata:1.1.1'
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+
+    // Room (use 1.1.0-beta1 for latest beta)
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+
+    // Paging
+    implementation 'android.arch.paging:runtime:1.0.1'
+
+    // Test helpers for LiveData
+    testImplementation 'android.arch.core:core-testing:1.1.1'
+
+    // Test helpers for Room
+    testImplementation 'android.arch.persistence.room:testing:1.1.1'
+
+    /* ==== Room Dependency Completed ==== */
+
+    //Dagger dependency
+    implementation 'com.google.dagger:dagger:2.13'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.13'
+    implementation 'me.kaelaela:verticalviewpager:1.0.0@aar'
+    implementation 'me.relex:circleindicator:2.1.0@aar'
+
+    //rx java
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.4'
+    implementation 'com.twistedequations.rx2:rx2-savestate:2.0.2'
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+    implementation 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.1.1'
+
+    //dependency to check runtime permission with RxJava
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+
+    //Network Dependencies
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
+
+    //for converting strings
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.fatboyindustrial.gson-jodatime-serialisers:gson-jodatime-serialisers:1.5.0'
+    implementation 'com.github.florent37:singledateandtimepicker:2.0.1'
+
+    //multidex for above 64k method in app
+    implementation 'com.android.support:multidex:1.0.3'
+
+    //Calligraphy for fonts
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.0.3'
+
+    //dependency for country code
+    implementation 'io.michaelrocks:libphonenumber-android:8.8.5'
+    implementation 'com.github.joielechong:countrycodepicker:2.1.8'
+
+    //Lottie animation
+    implementation 'com.airbnb.android:lottie:2.5.4'
+
+    //Google Core Libraries for Java
+    implementation 'com.google.guava:guava:25.0-android'
+
+
+    //default spinner date picker
+    implementation 'com.github.drawers:SpinnerDatePicker:1.0.6'
+
+    //Youtube Player Jar
+    implementation files('src/main/libs/YouTubeAndroidPlayerApi.jar')
+
+    // Material Tap Target for tutorial dependency
+    implementation 'uk.co.samuelwall:material-tap-target-prompt:2.9.0'
+    implementation 'com.squareup.okio:okio:1.15.0'
+    implementation 'com.squareup.okhttp:okhttp:2.5.0'
+
+    //Razor pay SDK
+    implementation 'com.razorpay:checkout:1.5.2'
+
+    //TableView
+
+    //implementation 'com.evrencoskun.library:tableview:0.8.8'
+    implementation project(':tableview')
+
+    //tooltip
+    implementation 'it.sephiroth.android.library.targettooltip:target-tooltip-library:1.3.15'
+
+    //ever note job-scheduler dependency
+    implementation 'com.evernote:android-job:1.3.0-rc1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    //implementation files('src/main/libs/httpcore-4.2.3.jar')
+
+    //implementation files('src/main/libs/httpclient-4.0.3.jar')
+
+    //Socket
+    implementation('io.socket:socket.io-client:1.0.0') {
+        // excluding org.json which is provided by Android
+        exclude group: 'org.json', module: 'json'
+    }
+
+}
+
+/**
+ * method to generate version code
+ * @return version code
+ */
+private Integer generateVersionCode() {
+    return rootProject.ext.minSdkVersion * 10000000 + rootProject.ext.versionMajor * 10000 + rootProject.ext.versionMinor * 100 + rootProject.ext.versionPatch
+}
+
+/**
+ * method to generate version name
+ * @return version name
+ */
+private String generateVersionName() {
+    String versionName = "${rootProject.ext.versionMajor}.${rootProject.ext.versionMinor}.${rootProject.ext.versionPatch}"
+    if (rootProject.ext.versionClassifier == null) {
+        if (rootProject.ext.isSnapshot) {
+            rootProject.ext.versionClassifier = "SNAPSHOT"
+        }
+    }
+
+    if (rootProject.ext.versionClassifier != null) {
+        versionName += "-" + rootProject.ext.versionClassifier
+    }
+    return versionName;
+}
+
+/**
+ * method to generate places api key
+ * @return original places api
+ */
+private String getPlacesAPIKey() {
+    String placesAPIKey1 = project.findProperty("PLACES_API_KEY_1");
+    String placesAPIKey2 = project.findProperty("PLACES_API_KEY_2");
+    return placesAPIKey1.replace(":","")+placesAPIKey2.replace(":","");
+}
+
+apply plugin: 'com.google.gms.google-services'

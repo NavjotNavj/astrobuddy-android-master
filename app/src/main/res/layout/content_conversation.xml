@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_conversation">
+
+    <include layout="@layout/base_image_background_layout" />
+
+    <TextView
+        android:id="@+id/chat_queue_sequence_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gunmetal"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:visibility="gone"
+        tools:text="Your sequence number is 3." />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/conversation_type_layout"
+        android:layout_below="@+id/chat_queue_sequence_label">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/conversation_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:scrollbars="vertical"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/no_chats_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/icon_no_chats"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@string/no_conversation"
+            android:textColor="@color/dark_grey"
+            android:textSize="14sp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/conversation_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_above="@+id/conversation_type_layout"
+        android:layout_marginTop="3dp"
+        android:background="@color/dark_grey"
+        android:visibility="gone" />
+
+    <!-- bottom message type layout -->
+    <LinearLayout
+        android:id="@+id/conversation_type_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/gunmetal"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/emojiButton"
+            android:layout_width="@dimen/chat_action_icon_size"
+            android:layout_height="@dimen/chat_action_icon_size"
+            android:layout_gravity="bottom"
+            android:background="@drawable/transparent_oval_button_selector"
+            android:padding="10dp"
+            android:tint="@color/white_transparent_70"
+            app:srcCompat="@drawable/ic_tag_faces_black_24dp" />
+
+
+        <com.vanniktech.emoji.EmojiEditText
+            android:id="@+id/conversation_enter_a_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:hint="@string/type_message"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLength="500"
+            android:maxLines="5"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:scrollbars="vertical"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_transparent_70"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/conversation_send_button"
+            android:layout_width="@dimen/chat_action_icon_size"
+            android:layout_height="@dimen/chat_action_icon_size"
+            android:layout_gravity="bottom"
+            android:background="@drawable/transparent_oval_button_selector"
+            android:padding="10dp"
+            android:tint="@color/white_transparent_70"
+            app:srcCompat="@drawable/ic_send_black_24dp" />
+
+    </LinearLayout>
+
+    <!-- conversation notify layout -->
+    <include
+        layout="@layout/conversation_notify_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
+
+    <!-- lottie waiting layout -->
+    <include
+        android:id="@+id/handler_join_wait_layout"
+        layout="@layout/lottie_waiting_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/conversation_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>
+

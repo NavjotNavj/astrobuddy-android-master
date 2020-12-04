@@ -1,0 +1,15 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+*iml
+.idea
+.gradle
+/gradle
+local.properties
+/build
+gradlew
+gradlew.bat
+/app/build
+/app/schemas
+/tableview/build
+/tableview/*.iml
+/WheelViewLib/build
+/WheelViewLib/*.iml

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/action_horoscope"
+            android:checkable="true"
+            android:checked="true"
+            android:title="@string/action_horoscope" />
+        <item
+            android:id="@+id/action_my_account"
+            android:checked="false"
+            android:visible="false"
+            android:checkable="true"
+            android:title="@string/action_my_account" />
+        <item
+            android:id="@+id/action_referral"
+            android:checked="false"
+            android:checkable="true"
+            android:title="@string/action_referral" />
+
+
+        <item
+            android:id="@+id/action_my_profile"
+            android:checked="false"
+            android:checkable="true"
+            android:title="@string/action_profile" />
+
+
+        <item
+            android:id="@+id/action_logout"
+            android:checked="false"
+            android:checkable="true"
+            android:title="@string/action_logout" />
+
+
+    </group>
+</menu>

@@ -1,0 +1,274 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="PrivateResource">AstroBuddy</string>
+    <string name="otp_received_action">in.appnow.astrobuddy.action.otp_received</string>
+    <string name="no_internet_connection">Please enable data or wifi connection.</string>
+    <string name="load_more">Load More</string>
+    <string name="no_conversation">You don\'t have any conversation. Start Conversation now.</string>
+    <string name="type_message">Type a message</string>
+    <string name="delete">Delete</string>
+    <string name="copy">Copy</string>
+    <string name="forward">Forward</string>
+    <string name="refresh">Refresh</string>
+    <string name="failed_to_fetch_messages">Failed to fetch messages. Please try again.</string>
+    <string name="action_horoscope">Horoscope</string>
+    <string name="action_forecast">Forecast</string>
+    <string name="action_home">Home</string>
+    <string name="action_my_account">My Account</string>
+    <string name="drawer_open">Open Drawer</string>
+    <string name="drawer_close">Close Drawer</string>
+    <string name="action_talk">Talk to AstroBuddy</string>
+    <string name="action_astro_buddy">Talk to AstroBuddy</string>
+    <string name="action_call_plan_history">Call Plan History</string>
+    <string name="action_referral">Refer a Friend</string>
+    <string name="action_ab_chat">AstroBuddy Chat</string>
+    <string name="action_profile">My Profile</string>
+    <string name="action_myth_buster">Myth Buster</string>
+    <string name="choose">Select to proceed</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="camera_not_supported">Your device doesn\'t support camera.</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_chart">My Chart</string>
+    <string name="otp_sent_message">Please enter the verification code sent to %s</string>
+    <string name="receive_otp_label">Didn\'t Receive OTP ?\n( %02d )</string>
+    <string name="password_regex">1234567890</string>
+
+    <string name="text_experience">Experience : %1$s</string>
+    <string name="text_language">Language : %1$s</string>
+    <string name="text_duration">Duration : %1$s</string>
+    <string name="text_fee">Fee : Rs %1$s /Minute</string>
+    <string name="text_fee_coin">(%1$s </string>
+    <string name="text_choose_plan_desc">Plan Duration : %1$s\nPlan Price : %2$s</string>
+    <string name="plan_minutes">Minutes : %1$s</string>
+    <string name="plan_price">Price : %1$s %2$s</string>
+    <string name="buy_date">Buy Date : %1$s</string>
+    <string name="used_date">Used Date : %1$s</string>
+
+    <string name="referral_share_message">Seek help on personal matters and know your future right with the AstroBuddy APP.\nSign-up with "%s" code and get a free chat with the AstroBuddy.\n\nDownload : https://play.google.com/store/apps/details?id=in.appnow.astrobuddy</string>
+
+    <string name="referral_share_new_message">Seek help on personal matters and know your future right with the AstroBuddy APP.\n\nDownload Now : https://play.google.com/store/apps/details?id=in.appnow.astrobuddy</string>
+
+    <string name="referral_email_subject">Hey! Know your future right</string>
+
+    <string name="play_service_package_name">com.google.android.gms</string>
+
+    <string name="available_chat_topics">Available Chat Credits : %d</string>
+
+    <string name="available_chat_topic">Chat Credits</string>
+
+    <string name="credit_rate_chart_label" formatted="false">(1 Chat Credit = %s %.02f)</string>
+
+    <string name="enter_chat_topics">Enter Chat Credits</string>
+
+    <string name="make_payment">Make Payment</string>
+    <string name="make_payment_format" formatted="false">Make Payment of %s %.02f</string>
+    <string name="make_payment_format_others" formatted="false">Make Payment of %s %.02f (INR %.02f*)</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="upgrade_plan">Upgrade Plan</string>
+    <string name="current_plan">Current Plan</string>
+    <string name="add_chat_topics">Add Chat Credits</string>
+    <string name="have_a_promocode">Have a promocode?</string>
+    <string name="waiting_dash"> -- -- </string>
+    <string name="no_transaction_history">No Transaction History.</string>
+    <string name="plan_chats_validity" formatted="false">Chat Credit : %d | Validity : %d days\nAmount : %s %s</string>
+    <string name="available_topics_format" formatted="false">Available Credit : %d | Validity : %s - %s</string>
+    <string name="done">DONE</string>
+    <string name="active">Active</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="more">More</string>
+    <string name="less">Less</string>
+    <string name="rs_format">` %.02f</string>
+    <string name="topic_added_message">%d Credits successfully added to your account.</string>
+    <string name="action_your_chart">Your Chart</string>
+    <string name="action_other_services">Other Services</string>
+    <string name="action_contact_us">Contact Us</string>
+    <string name="app_url">http://www.astrobuddy.guru/</string>
+    <string name="info" formatted="false">Info</string>
+    <string name="start_chat">Start Chat</string>
+    <string name="no_chat_topics_available">No Chat credits available.</string>
+    <string name="questions_people_have_asking_astrobuddy">Questions people have asked AstroBuddy:</string>
+    <string name="submit">Submit</string>
+    <string name="your_feedback">Your Feedback</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="confirm">Confirm</string>
+    <string name="resend_otp">RESEND OTP</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="exit">Exit</string>
+    <string name="change_plan">Upgrade Plan</string>
+    <string name="chat_welcome_message">Hi, Welcome to AstroBuddy. How can we help you?</string>
+    <string name="chat_wait_message">Please wait while we connect you to an AstroBuddy.</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password_note_message">Password should be 4 digits pin only.</string>
+
+
+    <string name="chat_history">Chat History</string>
+    <string name="call_plan_history">Call Plan History</string>
+    <string name="no_chat_history_available">No Chat history available.</string>
+
+    <string name="email_address">Email Address</string>
+
+    <string name="enter_4_digit_pin">Enter a 4-digit PIN</string>
+    <string name="confirm_4_digit_pin">Confirm 4-digit PIN</string>
+    <string name="enter_old_pin">Enter Old 4-digit PIN</string>
+    <string name="marital_status">- Marital Status -</string>
+    <string name="tip_of_the_day">Your Tip Of The Day</string>
+    <string name="tip_of_the_day_notification">Tip Of The Day - Notification</string>
+    <string name="chat_sequence">All Astrobuddies are serving other customers. You are in the queue at position : %d</string>
+    <string name="astrobuddy_join_message">AstroBuddy will join the chat shortly. Please wait.</string>
+    <string name="typing_status">Typing…</string>
+    <string name="online_status">Online</string>
+    <string name="offline_status">Offline</string>
+    <string name="away_status">Away</string>
+    <string name="chat_query_sent">Your query has been sent.</string>
+    <string name="astrobuddy">AstroBuddy</string>
+    <string name="notify_chat_message_label">You are in waiting do you want to wait?</string>
+    <string name="cancel">Cancel</string>
+    <string name="notify_me">Notify Me</string>
+    <string name="add_credits">Add Chat Credits</string>
+    <string name="change_password">Change Password</string>
+    <string name="help">Help</string>
+    <string name="chat_history_date">Chat History - %s</string>
+    <string name="unknown_error">Unknown error occurred. Please try again.</string>
+    <string name="refer_message">Like AstroBuddy? Refer it to your friends with above Promo Code to get them 1 Free Chat.</string>
+    <string name="chalit_chart">Chalit Chart</string>
+    <string name="moon_chart">Moon Chart</string>
+    <string name="navansh_chart">Navansh Chart</string>
+    <string name="lagna_chart">Lagna Chart</string>
+    <string name="report">Report</string>
+    <string name="security">Security</string>
+    <string name="credit_note_string" formatted="false">*1 %s = INR %s</string>
+    <string name="make_payment_dialog_message" formatted="false">You are about to pay INR %.02f (equivalent of %s %.02f). Your credit card may apply currency conversion charges. Please confirm to go ahead.</string>
+    <string name="published_on_format">Published on %s</string>
+    <string name="buy_topics">Buy Chat Credits</string>
+    <string name="share">Share</string>
+    <string name="information">Information</string>
+    <string name="know_more">Know More</string>
+    <string name="choose_plans_title">Choose Plan</string>
+    <string name="select_any_option">Select one :</string>
+    <string name="mobile_number_label">You will get call on :</string>
+    <string name="astrobuddy_unavailable">Caution : This Astrobuddy is currently busy. There may be
+    slight delay in calling.</string>
+    <string-array name="pick_picture_array">
+        <item>@string/gallery</item>
+        <item>@string/camera</item>
+    </string-array>
+    <string-array name="sharing_package_array">
+        <item>com.whatsapp</item>
+        <item>com.message</item>
+        <item>com.google.android.gm</item>
+        <item>com.facebook.katana</item>
+        <item>com.twitter.android</item>
+        <item>com.facebook.orca</item>
+        <item>org.telegram.messenger</item>
+    </string-array>
+    <string-array name="horoscope_types">
+        <item>Today</item>
+        <item>Tomorrow</item>
+        <item>Monthly</item>
+        <item>Yearly</item>
+    </string-array>
+    <string-array name="navigation_menu">
+        <item>@string/action_home</item>
+        <item>@string/action_ab_chat</item>
+        <item>@string/action_myth_buster</item>
+        <item>@string/action_chart</item>
+        <item>@string/action_my_account</item>
+        <item>@string/action_profile</item>
+        <item>@string/action_referral</item>
+        <item>@string/action_contact_us</item>
+        <item>@string/action_logout</item>
+    </string-array>
+    <string-array name="more_menu">
+        <item>@string/action_profile</item>
+        <item>@string/action_contact_us</item>
+        <item>@string/share</item>
+        <item>@string/tip_of_the_day_notification</item>
+        <item>@string/action_logout</item>
+    </string-array>
+    <string-array name="selectAction">
+        <item>Resend OTP</item>
+        <item>Enter OTP Manually</item>
+    </string-array>
+    <string-array name="intro_title">
+        <item>Chat Live with AstroBuddies.</item>
+        <item>Get your personal Astro Chart.</item>
+        <item>Get your daily horoscope tips &amp; forecast.</item>
+        <item>Bust Myths check your Horoscope &amp; More.</item>
+<!--        <item>Subscribe to one of our AstroBuddy Plans</item>-->
+        <!-- <item>Your first chat with AstroBuddy is free.</item>-->
+    </string-array>
+    <string-array name="intro_desc">
+        <item>Start a live text chat anytime with our AstroBuddies and get the best and practical advice based on your Birth Chart/Kundli.</item>
+        <item>Save your Birth Chart/ Kundli forever.</item>
+        <item>Check Daily, Monthly and Yearly predictions based on your Sun/Moon Sign.</item>
+        <item>Read our exclusive Myth Busters to clear all your superstitions &amp; myths associated with Astrology.</item>
+<!--        <item>AstroBuddy Weekly/Monthly plans automatically load credits into your account.</item>-->
+        <!--<item>Get your first Topic of discussion free.</item>-->
+    </string-array>
+
+    <string-array name="marital_status_array">
+        <item>SINGLE</item>
+        <item>ENGAGED</item>
+        <item>MARRIED</item>
+        <item>DIVORCED</item>
+        <item>WIDOW</item>
+    </string-array>
+
+    <string-array name="horoscope_chart_tab_array">
+        <item>Basic Details</item>
+        <item>Charts</item>
+        <item>Vimshottari Dasha</item>
+        <item>Planetry Positions</item>
+    </string-array>
+
+    <string-array name="planetry_positions_table_columns">
+        <item>Planet</item>
+        <item>R</item>
+        <item>Sign</item>
+        <item>Sign Lord</item>
+        <item>Degree</item>
+        <item>Nakshatra</item>
+        <item>Nakshatra Lord</item>
+        <item>House</item>
+    </string-array>
+
+    <string-array name="payment_mode_array">
+        <item>Internet Banking/Credit Card/Debit Card/Other Wallets</item>
+        <item>Paytm Wallet</item>
+    </string-array>
+
+    <string-array name="match_making_tab_array">
+        <item>Ashtakoot Points</item>
+        <item>Dashakoot Points</item>
+    </string-array>
+
+    <string-array name="ashtakoot_table_columns">
+        <item>Class</item>
+        <item>Description</item>
+        <item>Male Koot Attribute</item>
+        <item>Female Koot Attribute</item>
+        <item>Total Points</item>
+        <item>Received Points</item>
+    </string-array>
+
+    <string-array name="dashakoot_table_columns">
+        <item>Class</item>
+        <item>Male Koot Attribute</item>
+        <item>Female Koot Attribute</item>
+        <item>Total Points</item>
+        <item>Received Points</item>
+    </string-array>
+
+    <string-array name="planet_names">
+        <item>Sun,सूर्य</item>
+        <item>Moon,चन्द्र</item>
+        <item>Mars,मंगल</item>
+        <item>Mercury,बुध</item>
+        <item>Jupiter,गुरु</item>
+        <item>Venus,शुक्र</item>
+        <item>Saturn,शनि</item>
+        <item>Rahu,राहु</item>
+        <item>Ketu,केतु</item>
+    </string-array>
+</resources>

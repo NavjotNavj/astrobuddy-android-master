@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <include layout="@layout/base_image_background_layout" />
+
+    <LinearLayout
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/otp_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/logo_with_name_height"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="@dimen/_10sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/commonTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/verification_code"
+            android:textSize="22sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/otp_message_label"
+            style="@style/commonTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/otp_sent_message"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/otp_value_one"
+                style="@style/OTPEditText"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:imeOptions="actionNext" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/otp_value_two"
+                style="@style/OTPEditText"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:imeOptions="actionNext" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/otp_value_three"
+                style="@style/OTPEditText"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:imeOptions="actionNext" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/otp_value_four"
+                style="@style/OTPEditText"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:imeOptions="actionDone" />
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/confirm_otp_button"
+            style="@style/squareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/_50sdp"
+            android:paddingRight="@dimen/_50sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:text="@string/confirm" />
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/didnt_receive_otp_label"
+        style="@style/commonTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:maxLines="2"
+        android:gravity="center"
+        android:text="@string/receive_otp_label"
+        android:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/resend_otp"
+        style="@style/commonTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:text="@string/resend_otp"
+        android:visibility="visible" />
+
+
+</RelativeLayout>

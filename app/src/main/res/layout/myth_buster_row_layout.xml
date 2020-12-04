@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    app:cardBackgroundColor="@color/white_transparent_70"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="5dp"
+    app:contentPadding="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.youtube.player.YouTubeThumbnailView
+            android:id="@+id/myth_buster_row_image_view"
+            android:layout_width="@dimen/myth_buster_image_size"
+            android:layout_height="@dimen/myth_buster_image_size"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/darker_gray"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/myth_buster_row_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/myth_buster_row_image_view"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            tools:text="Osho" />
+
+        <TextView
+            android:id="@+id/myth_buster_row_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/myth_buster_row_title"
+            android:layout_toRightOf="@+id/myth_buster_row_image_view"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/gunmetal"
+            android:textSize="13sp"
+            tools:text="Star Sign Sygan" />
+
+        <TextView
+            android:id="@+id/myth_buster_row_publish_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/myth_buster_row_description"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/myth_buster_row_image_view"
+            android:textColor="@color/dark_grey"
+            android:textSize="10sp"
+            tools:text="Pubslihed on Mar 8, 2018" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_170sdp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <include layout="@layout/base_image_background_layout" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/nav_header_image_view"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon_default_profile"
+        android:layout_marginTop="@dimen/_50sdp"
+        app:civ_border_color="@color/colorPrimary"
+        app:civ_border_width="4dp"
+        app:civ_circle_background_color="@color/transparent_skin_color" />
+
+    <TextView
+        android:id="@+id/nav_user_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nav_header_image_view"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        tools:text="Surender Kumar" />
+</RelativeLayout>

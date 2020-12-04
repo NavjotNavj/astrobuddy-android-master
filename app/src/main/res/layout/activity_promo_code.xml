@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/promo_code_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:navigationIcon="@drawable/ic_action_navigation_white"
+        app:title="Promo Code" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/promo_edittext"
+        android:textColor="@color/gunmetal"
+        android:textColorHint="@color/dark_grey"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_below="@+id/promo_code_toolbar"
+        android:layout_marginRight="@dimen/_4sdp"
+        android:inputType="textCapCharacters"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_toLeftOf="@+id/apply_button"
+        android:background="@android:color/transparent"
+        android:hint="Have a promocode? Enter Here"
+        android:paddingLeft="@dimen/_5sdp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/apply_button"
+        style="@style/squareButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/promo_code_toolbar"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
+        android:text="Apply"
+        android:visibility="visible" />
+
+    <View
+        android:id="@+id/first_view_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@+id/promo_edittext"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="#bdb4b4b4" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/choose_promo_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/first_view_line"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="choose from the offers below"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_12sdp" />
+
+    <View
+        android:id="@+id/second_view_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@+id/choose_promo_title"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="#bdb4b4b4" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/second_view_line">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/promo_code_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            tools:listitem="@layout/adapter_promo_code_recycler" />
+
+        <ProgressBar
+            android:id="@+id/promo_code_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/empty_promo_code_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="No PromoCodes"
+            android:textColor="@color/gunmetal"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

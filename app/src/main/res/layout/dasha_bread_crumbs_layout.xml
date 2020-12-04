@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dasha_breadcrumbs_label"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:drawablePadding="3dp"
+    android:paddingBottom="3dp"
+    android:paddingTop="3dp"
+    android:textColor="@color/colorPrimary"
+    android:textSize="11sp"
+    tools:text="Major Dasha" />
+

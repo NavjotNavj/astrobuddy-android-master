@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/mobile_number_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/mobile_icon"
+                style="@style/LoginRegisterImageView"
+                app:srcCompat="@drawable/ic_phone_android_black_24dp" />
+
+            <com.rilixtech.CountryCodePicker
+                android:id="@+id/register_ccp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="2dp"
+                android:paddingTop="10dp"
+                app:ccp_arrowSize="26sp"
+                app:ccp_countryPreference="IN,SG,AE"
+                app:ccp_hideNameCode="true"
+                app:ccp_keyboardAutoPopOnSearch="false"
+                app:ccp_textColor="@color/black"
+                app:ccp_textSize="15sp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/mobile_edittext"
+                style="@style/commonEditText"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:hint="Mobile Number"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLines="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/email_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mobile_number_layout"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/email_icon"
+                style="@style/LoginRegisterImageView"
+                app:srcCompat="@drawable/ic_email_black_24dp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/email_edittext"
+                style="@style/commonEditText"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:hint="@string/email_address"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email_layout"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/password_icon"
+                style="@style/LoginRegisterImageView"
+                app:srcCompat="@drawable/ic_lock_black_24dp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/password_edittext"
+                style="@style/commonEditText"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:digits="@string/password_regex"
+                android:hint="@string/enter_4_digit_pin"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:maxLength="4"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/confirm_password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password_layout"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/confirm_password_icon"
+                style="@style/LoginRegisterImageView"
+                app:srcCompat="@drawable/ic_lock_black_24dp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/confirm_password_edittext"
+                style="@style/commonEditText"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:digits="@string/password_regex"
+                android:hint="@string/confirm_4_digit_pin"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:maxLength="4"
+                android:maxLines="1"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/have_promo_code"
+            style="@style/commonTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/confirm_password_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
+            android:text="Have a promocode?" />
+
+        <include
+            layout="@layout/promo_code_applied_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/confirm_password_layout"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/ic_refresh_black_24dp"
+        android:title="@string/refresh"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_security"
+        android:icon="@drawable/ic_security_black_24dp"
+        android:title="@string/security"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_exit"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"
+        android:title="@string/exit"
+        app:showAsAction="always" />
+</menu>

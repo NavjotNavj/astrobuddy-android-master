@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/gender_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/gender_icon"
+                style="@style/LoginRegisterImageView"
+                app:srcCompat="@drawable/ic_gender" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/male_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/male"
+                android:tint="@color/white"
+                app:civ_border_width="2dp"
+                app:civ_circle_background_color="@color/transparent_skin_color" />
+
+            <TextView
+                android:id="@+id/male_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="M"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/female_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/female"
+                android:tint="@color/white"
+                app:civ_border_width="2dp"
+                app:civ_circle_background_color="@color/transparent_skin_color" />
+
+            <TextView
+                android:id="@+id/female_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="F"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/other_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/other"
+                android:tint="@color/white"
+                app:civ_border_width="2dp"
+                app:civ_circle_background_color="@color/transparent_skin_color" />
+
+            <TextView
+                android:id="@+id/others_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Other"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/marital_status_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gender_layout"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/marital_icon"
+                style="@style/LoginRegisterImageView"
+                android:src="@drawable/icon_relationship" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/marital_status_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:background="@drawable/bg_edittext" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/ic_arrow_drop_down_black_24dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/marital_status_layout"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/user_icon"
+                style="@style/LoginRegisterImageView"
+                app:srcCompat="@drawable/ic_person_black_24dp" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+
+                android:id="@+id/f_name"
+                style="@style/commonEditText"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="First Name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/l_name"
+                style="@style/commonEditText"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="Last Name"
+                android:imeOptions="actionDone"
+                android:inputType="textCapSentences"
+                android:maxLength="30"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dob_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameLayout"
+            android:layout_marginTop="@dimen/_15sdp"
+
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/dob_icon"
+                style="@style/LoginRegisterImageView"
+
+                app:srcCompat="@drawable/ic_date_range_black_24dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+
+                android:id="@+id/dob_edittext"
+                style="@style/commonEditText"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:hint="Date of Birth" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tob_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dob_layout"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/tob_icon"
+                style="@style/LoginRegisterImageView"
+                app:srcCompat="@drawable/ic_access_time_black_24dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+
+                android:id="@+id/tob_edittext"
+                style="@style/commonEditText"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:hint="Time of Birth" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pob_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tob_layout"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+
+                android:id="@+id/pob_icon"
+                style="@style/LoginRegisterImageView"
+
+                app:srcCompat="@drawable/ic_pin_drop_black_24dp" />
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/pob_edittext"
+                style="@style/commonEditText"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:hint="Place of Birth"
+                android:maxLines="2" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

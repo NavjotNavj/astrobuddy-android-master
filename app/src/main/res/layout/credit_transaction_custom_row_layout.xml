@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    tools:ignore="MissingPrefix">
+
+    <TextView
+        android:id="@+id/subscription_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="2dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="2dp"
+        android:text="Subscription"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/credit_history_row_description_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subscription_tag"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@+id/credit_history_row_credit_label"
+        android:textColor="@color/gunmetal"
+        android:textSize="15sp"
+        tools:text="Credit Points purchased" />
+
+    <TextView
+        android:id="@+id/credit_history_row_credit_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subscription_tag"
+        android:layout_toLeftOf="@+id/topics_symbol"
+        android:paddingLeft="10dp"
+        android:paddingRight="3dp"
+        android:textColor="@color/green"
+        android:textSize="17sp"
+        tools:text="+50" />
+
+    <TextView
+        android:id="@+id/topics_symbol"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_below="@+id/subscription_tag"
+        android:layout_marginTop="3dp"
+        android:layout_toLeftOf="@+id/credit_action_more"
+        android:background="@drawable/circle_bg"
+        android:gravity="center"
+        android:text="CR"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/white"
+        android:textSize="8sp" />
+
+    <TextView
+        android:id="@+id/credit_history_row_id_label"
+        fontPath="fonts/Rupee_Foradian.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/credit_history_row_description_label"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@+id/credit_history_row_date_label"
+        android:paddingTop="5dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        tools:text="ID #AB1112" />
+
+    <TextView
+        android:id="@+id/credit_history_row_date_label"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/credit_history_row_id_label"
+        android:layout_below="@+id/credit_history_row_description_label"
+        android:layout_toLeftOf="@+id/credit_action_more"
+        android:paddingTop="5dp"
+        android:textColor="@color/gunmetal"
+        android:textSize="12sp"
+        tools:text="5th Feb 2018, 9:00 pm" />
+
+    <View
+        android:id="@+id/second_view_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@+id/credit_history_row_id_label"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/gunmetal" />
+
+    <ImageView
+        android:id="@+id/credit_action_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        app:srcCompat="@drawable/ic_more_vert_black_24dp" />
+</RelativeLayout>

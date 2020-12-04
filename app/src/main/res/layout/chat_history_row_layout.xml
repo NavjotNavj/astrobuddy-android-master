@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/white_transparent_70"
+    app:cardCornerRadius="2dp"
+    app:contentPadding="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/history_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/chat_history_row_date_label"
+            android:padding="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/chat_history_icon" />
+
+        <ImageView
+            android:id="@+id/chat_history_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:layout_below="@+id/history_image_view"
+            app:srcCompat="@drawable/ic_access_time_black_24dp" />
+
+        <TextView
+            android:id="@+id/chat_history_row_date_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/history_image_view"
+            android:layout_toRightOf="@+id/chat_history_time"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textColor="@color/gunmetal"
+            android:textSize="13sp"
+            tools:text="29 jun 20187:30pm" />
+
+        <RatingBar
+            android:id="@+id/chat_history_row_rating_bar"
+            style="@style/Base.Widget.AppCompat.RatingBar.Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/chat_history_row_topics_used_label"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressDrawable="@drawable/chat_rating_bar_indicator"
+            android:rating="4" />
+
+        <TextView
+            android:id="@+id/chat_history_row_message_count_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="Message Count : 5" />
+
+        <TextView
+            android:id="@+id/chat_history_row_topics_used_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/chat_history_row_message_count_label"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="Credits Used : 5" />
+
+        <TextView
+            android:id="@+id/chat_history_row_view_all_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/chat_history_row_rating_bar"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/theme_button_selector"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:text="View Messages"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

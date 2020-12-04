@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/base_image_background_layout" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/contact_us_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:paddingLeft="@dimen/_30sdp"
+                android:paddingRight="@dimen/_30sdp"
+                android:scaleType="fitCenter"
+                android:paddingTop="@dimen/_10sdp"
+                tools:src="@drawable/customer_service_icon" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contact_us_image"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="-15dp"
+                app:cardBackgroundColor="@color/white_transparent_70"
+                app:cardCornerRadius="4dp"
+                app:contentPadding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/contact_us_web_link"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="web"
+                        android:drawablePadding="10dp"
+                        android:padding="10dp"
+                        android:text="www.astrobuddy.guru"
+                        android:textColor="@color/gunmetal"
+                        android:textColorLink="@color/gunmetal"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/contact_us_mail_link"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="email"
+                        android:drawablePadding="10dp"
+                        android:padding="10dp"
+                        android:text="contact@astrobuddy.guru"
+                        android:textColor="@color/gunmetal"
+                        android:textColorLink="@color/gunmetal"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/contact_us_mobile_link"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:padding="10dp"
+                        android:autoLink="phone"
+                        android:visibility="gone"
+                        android:text="+91 - 9886098860"
+                        android:textColor="@color/gunmetal"
+                        android:textColorLink="@color/gunmetal"
+                        android:textSize="18sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_30sdp"
+                        android:layout_marginRight="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_60sdp"
+                        android:background="@color/colorPrimary" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

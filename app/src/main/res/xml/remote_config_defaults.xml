@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?><!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>chat_wait_time</key>
+        <value>15</value>
+    </entry>
+    <entry>
+        <key>referral_message</key>
+        <value>Like AstroBuddy? Refer it to your friends with above Promo Code to get them 1 Free
+            Chat.
+        </value>
+    </entry>
+    <entry>
+        <key>chat_promo_text</key>
+        <value></value>
+    </entry>
+    <entry>
+        <key>chat_promo_available</key>
+        <value>false</value>
+    </entry>
+
+    <entry>
+        <key>tod_daily_notification_start_time</key>
+        <value>7</value>
+    </entry>
+    <entry>
+        <key>tod_daily_notification_end_time</key>
+        <value>8</value>
+    </entry>
+
+    <!-- App Upgrade XML Defaults -->
+    <entry>
+        <key>force_upgrade</key>
+        <value>false</value>
+    </entry>
+
+    <entry>
+        <key>recommend_upgrade</key>
+        <value>false</value>
+    </entry>
+
+    <entry>
+        <key>upgrade_message</key>
+        <value>Please upgrade your app for latest functionality.</value>
+    </entry>
+
+    <entry>
+        <key>play_store_version</key>
+        <value>190010028</value>
+    </entry>
+
+</defaultsMap><!-- END xml_defaults -->

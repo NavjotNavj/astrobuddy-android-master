@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- Horoscope vertical pager view -->
+    <LinearLayout
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/theme_button_selector"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+
+        <me.kaelaela.verticalviewpager.VerticalViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            app:ci_animator="@animator/indicator_no_animator"
+            app:ci_drawable="@drawable/white_radius"
+            app:ci_drawable_unselected="@drawable/black_radius"
+            app:ci_margin="@dimen/_2sdp"
+            app:ci_orientation="vertical" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/horoscope_type_picker_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/grey_bg_curve"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/today_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp"
+            android:text="Today"
+            android:textAllCaps="true"
+            android:textColor="@color/gunmetal"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tomorrow_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp"
+            android:text="Tomorrow"
+            android:textAllCaps="true"
+            android:textColor="@color/gunmetal"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/monthly_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp"
+            android:text="Monthly"
+            android:textAllCaps="true"
+            android:textColor="@color/gunmetal"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/yearly_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp"
+            android:text="Yearly"
+            android:textAllCaps="true"
+            android:textColor="@color/gunmetal"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/horoscope_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/horoscope_type_picker_layout"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <ImageView
+        android:id="@+id/horoscope_icon"
+        android:layout_width="@dimen/horoscope_detail_size"
+        android:layout_height="@dimen/horoscope_detail_size"
+        android:layout_below="@+id/horoscope_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:scaleType="fitCenter" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/horoscope_detail_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/horoscope_icon"
+        android:layout_marginTop="@dimen/_9sdp"
+        android:background="@color/transparent_skin_color">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <in.appnow.astrobuddy.custom_views.SmartTextView
+                android:id="@+id/horoscope_detail_label"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical|start"
+                android:lineSpacingExtra="1dp"
+                android:padding="20dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/gunmetal"
+                android:textSize="15sp"
+                android:visibility="gone"
+                app:font_="thin"
+                app:justified_="true" />
+
+            <ProgressBar
+                android:id="@+id/horoscope_detail_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="50dp"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@+id/horoscope_detail_label" />
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/horoscope_detail_chat_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:tint="@color/white"
+            app:backgroundTint="@color/colorPrimary"
+            app:elevation="7dp"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_question_answer_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/red_curve_bg"
+            android:elevation="7dp"
+            android:text="Live"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+    </FrameLayout>
+</RelativeLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:ignore="MissingPrefix">
+
+    <include layout="@layout/base_image_background_layout" />
+
+
+    <RelativeLayout
+        android:id="@+id/tip_of_the_day_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:visibility="visible">
+
+        <!--<com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/tip_of_day_anim_one"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            app:lottie_fileName="tip_of_the_day.json"
+            app:lottie_loop="true"
+            app:lottie_repeatCount="3" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/tip_of_day_anim_two"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_alignParentRight="true"
+            app:lottie_fileName="tip_of_the_day.json"
+            app:lottie_loop="true"
+            app:lottie_repeatCount="3" />-->
+
+        <TextView
+            android:id="@+id/tip_of_day_user_name_label"
+            fontPath="fonts/helr45w.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:text="AstroBuddy Prediction"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tip_of_day_label"
+            fontPath="fonts/helr45w.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tip_of_day_user_name_label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Check your daily, monthly, yearly prediction here."
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <com.lukedeighton.wheelview.WheelView
+        android:id="@+id/wheel_view"
+        android:layout_width="@dimen/wheel_view_width"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:background="@drawable/half_circle"
+        android:visibility="gone"
+        app:repeatItems="true"
+        app:rotatableWheelDrawable="false"
+        app:selectionAngle="0.0"
+        app:wheelItemCount="12"
+        app:wheelItemRadius="@dimen/wheel_item_radius"
+        app:wheelPadding="@dimen/wheel_padding"
+        app:wheelPosition="left"
+        app:wheelRadius="@dimen/wheel_radius"
+        app:wheelToItemDistance="@dimen/wheel_to_item_distance" />
+
+
+    <ImageView
+        android:id="@+id/menu_button"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/wheel_view_rim_height"
+        android:layout_centerVertical="true"
+        android:scaleType="fitStart" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/horoscope_talk_astrobuddy_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:tint="@color/white"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorPrimary"
+        app:elevation="7dp"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_call_black_24dp" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:visibility="gone">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/horoscope_chat_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:tint="@color/white"
+            app:backgroundTint="@color/colorPrimary"
+            app:elevation="7dp"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_question_answer_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/red_curve_bg"
+            android:elevation="7dp"
+            android:text="Live"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+    </FrameLayout>
+
+</RelativeLayout>

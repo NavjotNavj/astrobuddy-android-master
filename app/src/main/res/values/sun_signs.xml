@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sun_sign_array">
+        <item>3,Aries,Mesha</item>
+        <item>4,Taurus,Vrishabha</item>
+        <item>5,Gemini,Mithun</item>
+        <item>6,Cancer,Karka</item>
+        <item>7,Leo,Sinh</item>
+        <item>8,Virgo,Kanya</item>
+        <item>9,Libra,Tula</item>
+        <item>10,Scorpio,Vruschika</item>
+        <item>11,Sagittarius,Dhanu</item>
+        <item>12,Capricorn,Makar</item>
+        <item>1,Aquarius,Kumbha</item>
+        <item>2,Pisces,Meena</item>
+    </string-array>
+</resources>
